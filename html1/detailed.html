@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+
+    </ul>
+    <script>
+        let ul = document.querySelector("ul");
+
+        let id = sessionStorage.getItem("id");
+        let name = sessionStorage.getItem("name");
+        let username = sessionStorage.getItem("usernamme");
+        let email = sessionStorage.getItem("email");
+        let address = sessionStorage.getItem("address");
+
+        let li1 = document.createElement("li")
+        let li2 = document.createElement("li")
+        let li3 = document.createElement("li")
+        let li4 =document.createElement("li")
+        let li5 =document.createElement("li")
+        
+
+        li1.innerText = id
+        li2.innerText = name
+        li3.innerText = username
+        li4.innerText = email
+        li5.innerText = address.street
+
+        ul.appendChild(li1)
+        ul.appendChild(li2)
+        ul.appendChild(li3)
+        ul.appendChild(li4)
+        ul.appendChild(li5)
+
+        
+    </script>
+</body>
+</html>

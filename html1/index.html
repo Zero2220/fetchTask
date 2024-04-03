@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <ul>
+
+    </ul>
+    
+
+    <script>
+        let ul = document.querySelector("ul")
+        
+        
+        fetch("https://jsonplaceholder.typicode.com/users")
+        .then(response =>response.json())
+        .then(data=>{
+            data.forEach(user => {
+                var proc = document.createElement("a");
+                var t = document.createTextNode("Search");
+                proc.appendChild(t);
+                let li =  document.createElement("li")
+                li.innerText=user.name
+                li.setAttribute("data-id",user.id)
+                li.setAttribute("data-name",user.name)
+                li.setAttribute("data-username",user.username)
+                li.setAttribute("data-email",user.email)
+                li.setAttribute("data-address",user.adress)
+                ul.appendChild(li)
+
+                
+
+                li.addEventListener("click",function(e){
+                    let page =[]
+                    let id = li.getAttribute("data-id");
+                    let name = li.getAttribute("data-name");
+                    let username = li.getAttribute("data-username");
+                    let email = li.getAttribute("data-email");
+                    let address = li.getAttribute("data-address");
+                    
+                    
+                    sessionStorage.setItem("id", id);
+                    sessionStorage.setItem("name",name)
+                    sessionStorage.setItem("usernamme",username)
+                    sessionStorage.setItem("email",email)
+                    sessionStorage.setItem("address",address)
+
+                    window.location.href="file:///C:/Users/Asus/Desktop/html1/detailed.html";
+                    
+                })
+            });
+        })
+        
+
+
+    </script>
+</body>
+</html>
